@@ -11,4 +11,5 @@
   command = "npm run dev"
   port = 3000
 [context.production]
-  environment = { VITE_API_URL = "https://primesolutions.onrender.com/api" }
+  # Production API for Metro Cracks - update in Netlify dashboard if needed
+  environment = { VITE_API_URL = "https://metrocracks-backend.onrender.com/api" }
