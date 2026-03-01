@@ -9,11 +9,11 @@ dotenv.config();
 const app = express();
 
 // Use a single, early CORS middleware for development and production.
-// CORS Configuration - Always allow the frontend origin(s)
+// CORS Configuration - Always allow the frontend origin(s).  Support a
+// comma-separated list in the FRONTEND_ORIGIN env var for multiple hosts.
 const allowedOrigins = [
-  process.env.FRONTEND_ORIGIN || 'https://primedigital-solutions.com',
-  'https://primedigital-solutions.com',
-  'https://primedigital-solutions.netlify.app',
+  // allow whatever is passed via env, plus local dev hosts
+  ...(process.env.FRONTEND_ORIGIN ? process.env.FRONTEND_ORIGIN.split(',').map(o => o.trim()) : []),
   'http://localhost:3000',
   'http://localhost:5173'
 ];
@@ -134,6 +134,21 @@ app.use('/api/deposits', depositRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/advice', adviceRoutes);
 app.use('/api/whatsapp', whatsappRoutes);
+
+// Global error handler ensures CORS headers are always sent even when a
+// route throws before sending a response (was causing 500 responses without
+// Access-Control-Allow-Origin and produced CORS failures in the browser).
+app.use((err, req, res, next) => {
+  const origin = req.headers.origin;
+  if (allowedOrigins.includes(origin) || !origin) {
+    res.header('Access-Control-Allow-Origin', origin || '*');
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  }
+  console.error('Unhandled error:', err);
+  res.status(err.status || 500).json({ error: err.message || 'Internal Server Error' });
+});
 
 // Seed admin user if not exists (credentials from .env)
 async function seedAdmin() {
