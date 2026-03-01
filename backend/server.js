@@ -17,6 +17,7 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5173'
 ];
+console.log('CORS allowed origins at startup:', allowedOrigins);
 
 app.use(cors({
   origin: function (origin, callback) {
