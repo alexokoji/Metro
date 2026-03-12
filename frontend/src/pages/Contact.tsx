@@ -51,8 +51,8 @@ const Contact = () => {
           <div className="flex items-center gap-4">
             <FaPhone className="text-sky-600 text-3xl" />
             <div>
-              <p className="text-gray-700 font-semibold">Phone</p>
-              <span className="text-sky-600">+1 555 123 4567</span>
+              <p className="text-gray-700 font-semibold">Phone / WhatsApp</p>
+              <span className="text-sky-600">+1 (818) 523-9018</span>
             </div>
           </div>
         </motion.div>

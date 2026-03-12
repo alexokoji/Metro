@@ -5,7 +5,7 @@ const whatsappSettingsSchema = new mongoose.Schema(
     phoneNumber: {
       type: String,
       required: true,
-      default: '+1-415-466-5321'
+      default: '+1-818-523-9018'
     },
     message: {
       type: String,

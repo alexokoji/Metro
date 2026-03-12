@@ -32,8 +32,8 @@ const SocialActionButton = () => {
   if (isLoading) return null;
 
   const whatsappLink = `https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
-  const telegramLink = 'https://t.me/primedigitalsolutions';
-  const instagramLink = 'https://instagram.com/primedigitalsolutionss';
+  const telegramLink = 'https://t.me/metrocracks2';
+  const instagramLink = 'https://www.instagram.com/metrocracks2?igsh=bjg0eDRoZXlzdjJw';
 
   const socialIcons = [
     {
