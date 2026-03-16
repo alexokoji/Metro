@@ -11,7 +11,6 @@ const WhatsAppWidget = () => {
       try {
         const res = await fetch(`${import.meta.env.VITE_API_URL}/whatsapp`);
         const data = await res.json();
-        phoneNumber(+1-818-523-9018);
         setPhoneNumber(data.phoneNumber);
         setMessage(data.message);
       } catch (error) {
