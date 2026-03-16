@@ -15,7 +15,6 @@ const SocialActionButton = () => {
         const res = await fetch(`${import.meta.env.VITE_API_URL}/whatsapp`);
         const data = await res.json();
         setPhoneNumber(data.phoneNumber);
-        phoneNumber(+1-818-523-9018);
         setMessage(data.message);
       } catch (error) {
         console.error('Failed to fetch WhatsApp settings:', error);
