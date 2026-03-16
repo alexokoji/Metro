@@ -29,7 +29,7 @@ const WhatsAppWidget = () => {
 
   if (isLoading || !phoneNumber) return null;
 
-  const whatsappLink = `https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
+  const whatsappLink = `https://wa.me/18185239018?text=${encodeURIComponent(message)}`;
 
   return (
     <a
