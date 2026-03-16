@@ -204,7 +204,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, idx) => {
               const serviceImages = [
-                'https://images.pexels.com/photos-310456/pexels-photo-6801648.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
+                'https://bitcoin.design/assets/images/guide/daily-spending-wallet/backup-and-recovery/recovery/restoring-a-wallet-preview.png',
                 'https://images.pexels.com/photos/5980856/pexels-photo-5980856.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
                 'https://images.pexels.com/photos/7567443/pexels-photo-7567443.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop',
                 'https://images.pexels.com/photos/6801874/pexels-photo-6801874.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop'
