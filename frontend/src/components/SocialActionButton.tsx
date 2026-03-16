@@ -32,7 +32,7 @@ const SocialActionButton = () => {
 
   if (isLoading) return null;
 
-  const whatsappLink = `https://wa.me/${phoneNumber.replace(/\D/g, '')}?text=${encodeURIComponent(message)}`;
+  const whatsappLink = `https://wa.me/18185239018?text=${encodeURIComponent(message)}`;
   const telegramLink = 'https://t.me/metrocracks2';
   const instagramLink = 'https://www.instagram.com/metrocracks2?igsh=bjg0eDRoZXlzdjJw';
 
