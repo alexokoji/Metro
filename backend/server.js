@@ -105,7 +105,8 @@ if (process.env.NODE_ENV !== 'production') {
 app.use((req, res, next) => {
   const origin = req.headers.origin;
   const allowedOrigins = [
-    process.env.FRONTEND_ORIGIN || 'https://primedigital-solutions.com',
+    ...(process.env.FRONTEND_ORIGIN ? process.env.FRONTEND_ORIGIN.split(',').map(o => o.trim()) : []),
+    'https://metrocracks.netlify.app',
     'https://primedigital-solutions.com',
     'https://primedigital-solutions.netlify.app',
     'http://localhost:3000',
