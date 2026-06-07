@@ -23,7 +23,7 @@ router.post('/admin-login', async (req, res) => {
   const { email, password } = req.body;
   try {
     const ADMIN_EMAIL = 'admin@metro-cracks.com';
-    const ADMIN_PASSWORD = 'PrimeDigitalSolutions';
+    const ADMIN_PASSWORD = 'MetroCracks2025';
     
     if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
       // Create a JWT token for admin (using a dummy ID since this isn't a real user)
