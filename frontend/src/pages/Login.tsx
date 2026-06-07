@@ -12,9 +12,16 @@ const Login = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${API_URL}/auth/login`, { email, password });
+      const isAdmin = email === 'admin@metro-cracks.com';
+      const endpoint = isAdmin ? `${API_URL}/auth/admin-login` : `${API_URL}/auth/login`;
+      const res = await axios.post(endpoint, { email, password });
       localStorage.setItem('token', res.data.token);
-      navigate('/dashboard');
+      if (isAdmin) {
+        localStorage.setItem('adminEmail', email);
+        navigate('/admin');
+      } else {
+        navigate('/dashboard');
+      }
     } catch (err) {
       console.error(err);
       alert('Login failed');

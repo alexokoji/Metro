@@ -22,7 +22,7 @@ router.post('/register', async (req, res) => {
 router.post('/admin-login', async (req, res) => {
   const { email, password } = req.body;
   try {
-    const ADMIN_EMAIL = 'admin@primedigital-solutions.com';
+    const ADMIN_EMAIL = 'admin@metro-cracks.com';
     const ADMIN_PASSWORD = 'PrimeDigitalSolutions';
     
     if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {

@@ -26,10 +26,10 @@ const Admin = () => {
     const token = localStorage.getItem('token');
     const adminEmail = localStorage.getItem('adminEmail');
 
-    console.log('Admin check:', { token: !!token, adminEmail, expected: 'admin@primedigital-solutions.com' });
+    console.log('Admin check:', { token: !!token, adminEmail, expected: 'admin@metro-cracks.com' });
 
     // Simple admin check
-    if (!token || adminEmail !== 'admin@primedigital-solutions.com') {
+    if (!token || adminEmail !== 'admin@metro-cracks.com') {
       console.log('Redirecting to login - auth failed');
       window.location.href = '/login';
       return;
