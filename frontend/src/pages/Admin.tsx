@@ -494,7 +494,7 @@ const Admin = () => {
                 <p className="text-gray-300"><strong>Date:</strong> {new Date(selectedDeposit.createdAt).toLocaleString()}</p>
                 <div className="border-2 border-gray-700 rounded-xl p-4 bg-gray-800">
                   <img
-                    src={`${API_URL}/../uploads/${selectedDeposit.proof.split('/').pop()}`}
+                    src={selectedDeposit.proof}
                     alt="Proof"
                     className="w-full h-auto rounded-lg"
                   />
